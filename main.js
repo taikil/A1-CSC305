@@ -480,7 +480,7 @@ function render(timestamp) {
             tailPosition[2] - 0.1333
           );
           gRotate(220, 1, 0, 0);
-          tailRotation[1] = 90 * Math.sin((0.001 * timestamp) / 1000); // Doesn't work
+          tailRotation[1] = 15 * Math.sin(timestamp / 100); // Doesn't work
           gRotate(tailRotation[1], 0, 1, 0);
           gScale(0.12, 0.12, 0.7);
           drawCone();
@@ -492,6 +492,8 @@ function render(timestamp) {
         {
           gTranslate(tailPosition[0], -tailPosition[1], tailPosition[2]);
           gRotate(125, 1, 0, 0);
+          tailRotation[1] = 15 * Math.sin(timestamp / 100); // Doesn't work
+          gRotate(tailRotation[1], 0, 1, 0);
           gScale(0.1, 0.1, 0.5);
           drawCone();
         }
